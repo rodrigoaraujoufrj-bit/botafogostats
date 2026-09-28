@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Botafogo 2026</title>
+  <meta name="description" content="Painel da campanha do Botafogo no Brasileirão Série A 2026.">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-in">
+      <a href="#topo" class="marca"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7-6.2-3.8L5.8 21.2l1.6-7L2 9.5l7.1-.6z"/></svg>Botafogo 2026</a>
+      <div class="nav-links">
+        <a href="#painel">Campanha</a>
+        <a href="#cenarios">Cenários</a>
+        <a href="#evolucao">Evolução</a>
+        <a href="#jogos">Jogos</a>
+        <a href="#tabela">Tabela</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="topo" class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-id">
+        <img id="escudo" class="escudo" alt="Escudo do Botafogo" hidden onerror="this.hidden=true">
+        <div>
+          <p class="eyebrow claro">Brasileirão · Série A · <span id="h-temporada">2026</span></p>
+          <h1>Painel de desempenho</h1>
+          <p class="hero-sub">Campanha do Botafogo rodada a rodada, com dados atualizados automaticamente.</p>
+        </div>
+      </div>
+      <div class="hero-pos">
+        <span class="hero-pos-num"><span id="h-pos">–</span><small>º</small></span>
+        <span class="hero-pos-rot">lugar na tabela</span>
+      </div>
+      <dl class="hero-meta">
+        <div><dt>Pontos</dt><dd id="h-pontos">–</dd></div>
+        <div><dt>Jogos disputados</dt><dd id="h-jogos">–</dd></div>
+        <div><dt>Período analisado</dt><dd id="h-periodo">–</dd></div>
+        <div><dt>Atualizado</dt><dd id="h-atualizado">–</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p id="erro" class="erro" hidden></p>
+
+    <!-- Painel -->
+    <section id="painel" class="secao">
+      <div class="secao-topo">
+        <div>
+          <p class="eyebrow">Visão geral</p>
+          <h2>Campanha</h2>
+        </div>
+        <div class="segmento" role="tablist" aria-label="Recorte dos jogos">
+          <button role="tab" data-recorte="todos" aria-selected="true">Todos os jogos</button>
+          <button role="tab" data-recorte="casa" aria-selected="false">Em casa</button>
+          <button role="tab" data-recorte="fora" aria-selected="false">Fora</button>
+        </div>
+      </div>
+      <div class="kpis">
+        <article class="card kpi">
+          <header><span class="rot">Aproveitamento</span><span class="tag" id="k-aprov-tag">geral</span></header>
+          <p class="big" id="k-aprov">–</p>
+          <div class="trilho"><span id="k-aprov-barra"></span></div>
+          <p class="nota" id="k-aprov-nota"></p>
+        </article>
+        <article class="card kpi">
+          <header><span class="rot">Campanha</span><span class="tag">V · E · D</span></header>
+          <div class="ved">
+            <div class="ved-v"><b id="k-v">–</b><span>vitórias</span></div>
+            <div class="ved-e"><b id="k-e">–</b><span>empates</span></div>
+            <div class="ved-d"><b id="k-d">–</b><span>derrotas</span></div>
+          </div>
+          <p class="nota">Vitória 3 pts · empate 1 pt · derrota 0 pt</p>
+        </article>
+        <article class="card kpi">
+          <header><span class="rot">Média por jogo</span><span class="tag">pts / jogo</span></header>
+          <p class="big" id="k-media">–</p>
+          <div class="trilho"><span id="k-media-barra"></span></div>
+          <p class="nota">de um máximo de 3,00 pontos</p>
+        </article>
+        <article class="card kpi">
+          <header><span class="rot">Saldo de gols</span><span class="tag">gols</span></header>
+          <p class="big" id="k-saldo">–</p>
+          <div class="duo">
+            <div><b id="k-gp">–</b><span>marcados</span></div>
+            <div><b id="k-gc">–</b><span>sofridos</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Cenários -->
+    <section id="cenarios" class="secao">
+      <div class="secao-topo">
+        <div>
+          <p class="eyebrow">Modelo de cenários</p>
+          <h2 id="cen-titulo">As rodadas finais</h2>
+        </div>
+        <p class="secao-nota" id="cen-nota">Probabilidades estimadas por simulação do restante do campeonato.</p>
+      </div>
+      <div id="cen-vazio" class="card vazio" hidden>A simulação aparece quando houver jogos encerrados e jogos a disputar.</div>
+      <div class="cenarios" id="cen-grade">
+        <article class="card prob"><header><span class="rot">Chance de título</span><span class="tag" id="p-titulo-tag"></span></header><p class="big" id="p-titulo">–</p><div class="trilho"><span id="p-titulo-barra"></span></div></article>
+        <article class="card prob"><header><span class="rot">Chance de G4</span><span class="tag" id="p-g4-tag"></span></header><p class="big" id="p-g4">–</p><div class="trilho"><span id="p-g4-barra"></span></div><p class="nota" id="p-g6"></p></article>
+        <article class="card prob"><header><span class="rot">Risco de rebaixamento</span><span class="tag" id="p-z4-tag"></span></header><p class="big" id="p-z4">–</p><div class="trilho perigo"><span id="p-z4-barra"></span></div></article>
+        <article class="card prob"><header><span class="rot">Faixa mais provável</span><span class="tag">pontos</span></header><p class="big" id="p-faixa">–</p><div class="faixa" id="p-faixa-vis"></div><p class="nota" id="p-faixa-nota"></p></article>
+      </div>
+      <article class="card" id="cen-dist-card">
+        <header class="card-topo"><div><p class="eyebrow">Distribuição</p><h3>Posição final nas simulações</h3></div><p class="nota" id="dist-nota"></p></header>
+        <div class="grafico baixo"><canvas id="g-dist" role="img" aria-label="Probabilidade de cada posição final"></canvas></div>
+      </article>
+    </section>
+
+    <!-- Evolução + Resultados -->
+    <section id="evolucao" class="secao duas">
+      <article class="card">
+        <header class="card-topo">
+          <div><p class="eyebrow">Rodada a rodada</p><h3>Evolução dos pontos</h3></div>
+          <div class="legenda" id="leg-pontos"></div>
+        </header>
+        <div class="mini-kpis">
+          <div><span>Pontuação atual</span><b id="e-atual">–</b></div>
+          <div><span>Para o G4</span><b id="e-g4">–</b></div>
+          <div><span>Sobre o Z4</span><b id="e-z4">–</b></div>
+        </div>
+        <div class="grafico"><canvas id="g-pontos" role="img" aria-label="Pontos acumulados do Botafogo, do líder, do 4º e do 17º colocado"></canvas></div>
+        <p class="leitura" id="e-leitura"></p>
+      </article>
+      <article class="card">
+        <header class="card-topo"><div><p class="eyebrow">Distribuição</p><h3>Resultados</h3></div></header>
+        <div class="resultados">
+          <div class="donut"><canvas id="g-donut" role="img" aria-label="Vitórias, empates e derrotas"></canvas><div class="donut-centro"><b id="r-aprov">–</b><span>aproveitamento</span></div></div>
+          <ul class="r-lista" id="r-lista"></ul>
+        </div>
+        <div class="mini-kpis dois">
+          <div><span>Taxa de vitória</span><b id="r-taxa">–</b></div>
+          <div><span>Jogos sem derrota</span><b id="r-invicto">–</b></div>
+        </div>
+        <div class="recorte5"><span>Últimos 5 jogos</span><div class="forma" id="r-forma"></div><b id="r-forma-pts"></b></div>
+      </article>
+    </section>
+
+    <section class="secao">
+      <article class="card">
+        <header class="card-topo"><div><p class="eyebrow">Tabela</p><h3>Posição rodada a rodada</h3></div><p class="nota">Calculada com os jogos encerrados até cada rodada.</p></header>
+        <div class="grafico"><canvas id="g-posicao" role="img" aria-label="Posição do Botafogo em cada rodada"></canvas></div>
+      </article>
+    </section>
+
+    <!-- Mando + Chegada -->
+    <section class="secao duas">
+      <article class="card">
+        <header class="card-topo"><div><p class="eyebrow">Mando de campo</p><h3>Onde rende mais?</h3></div></header>
+        <div class="mandos" id="mandos"></div>
+        <div class="divisao">
+          <div class="divisao-topo"><span>Origem dos pontos</span><b id="m-div-txt"></b></div>
+          <div class="barra-dupla"><span id="m-div-casa"></span><span id="m-div-fora"></span></div>
+        </div>
+        <p class="leitura" id="m-leitura"></p>
+      </article>
+      <article class="card">
+        <header class="card-topo"><div><p class="eyebrow">Projeção · 38 rodadas</p><h3>Cenário de chegada</h3></div><span class="tag grande" id="c-proj-tag">–</span></header>
+        <p class="texto" id="c-texto"></p>
+        <div class="simulador">
+          <label for="c-meta">Simular meta de pontos</label>
+          <div class="simulador-linha"><input type="range" id="c-meta" min="30" max="90" step="1" value="60"><output id="c-meta-val">60</output></div>
+          <p class="alvo" id="c-alvo"></p>
+        </div>
+        <p class="eyebrow" style="margin-top:18px">Próximos adversários</p>
+        <div class="proximos" id="c-proximos"></div>
+      </article>
+    </section>
+
+    <!-- Jogo a jogo -->
+    <section class="secao">
+      <article class="card">
+        <header class="card-topo">
+          <div><p class="eyebrow">Consistência</p><h3>Rendimento jogo a jogo</h3></div>
+          <div class="legenda"><span><i class="ponto V"></i>3 pts</span><span><i class="ponto E"></i>1 pt</span><span><i class="ponto D"></i>0 pt</span></div>
+        </header>
+        <div class="jogo-grade" id="j-grade"></div>
+        <div class="blocos" id="j-blocos"></div>
+        <div class="seqs" id="j-seqs"></div>
+      </article>
+    </section>
+
+    <!-- Intervalo -->
+    <section class="secao">
+      <article class="card">
+        <header class="card-topo">
+          <div><p class="eyebrow">Momentos do jogo</p><h3>Antes e depois do intervalo</h3></div>
+          <p class="nota">2º tempo = placar final menos placar do intervalo.</p>
+        </header>
+        <div class="tempos" id="t-tempos"></div>
+        <div class="seqs" id="t-tiles"></div>
+        <div class="matriz-bloco">
+          <div>
+            <p class="eyebrow">Do intervalo ao apito final</p>
+            <p class="nota">Linhas: situação no intervalo. Colunas: resultado final. Números = jogos.</p>
+          </div>
+          <div id="t-matriz"></div>
+        </div>
+        <p class="leitura" id="t-leitura"></p>
+      </article>
+    </section>
+
+    <!-- Jogos -->
+    <section id="jogos" class="secao">
+      <div class="secao-topo">
+        <div><p class="eyebrow">Jogo a jogo</p><h2>A campanha completa</h2></div>
+        <input type="search" id="busca" class="busca" placeholder="Buscar adversário" aria-label="Buscar adversário">
+      </div>
+      <div class="card sem-pad"><div class="rolagem"><table class="tabela" id="t-jogos"></table></div></div>
+    </section>
+
+    <!-- Classificação -->
+    <section id="tabela" class="secao">
+      <div class="secao-topo"><div><p class="eyebrow">Classificação oficial</p><h2>Tabela do Brasileirão</h2></div>
+        <div class="legenda"><span><i class="barra-leg g4"></i>Libertadores</span><span><i class="barra-leg pre"></i>Pré-Libertadores</span><span><i class="barra-leg sula"></i>Sul-Americana</span><span><i class="barra-leg z4"></i>Rebaixamento</span></div>
+      </div>
+      <div class="card sem-pad"><div class="rolagem"><table class="tabela" id="t-classif"></table></div></div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="wrap">
+      Dados: <a href="https://www.football-data.org/" rel="noopener">football-data.org</a> · atualização automática via GitHub Actions.
+      Probabilidades são estimativas de um modelo estatístico, não previsões garantidas.
+    </div>
+  </footer>
+</body>
+</html>

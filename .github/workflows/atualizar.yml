@@ -1,0 +1,52 @@
+name: Atualizar dados
+
+# A cada 2 horas (UTC), manualmente, ou quando a coleta muda no branch de desenvolvimento.
+# Agendamentos só rodam no branch padrão (main).
+on:
+  schedule:
+    - cron: "23 */2 * * *"
+  workflow_dispatch:
+  push:
+    branches: [claude/botafogo-brasileirao-dashboard-np9i2h]
+    paths:
+      - scripts/coletar.py
+      - .github/workflows/atualizar.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar-dados-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+
+      - name: Coletar e calcular métricas
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+        run: python scripts/coletar.py
+
+      - name: Publicar dados se mudaram
+        run: |
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Sem mudanças."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Atualiza dados do dashboard"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

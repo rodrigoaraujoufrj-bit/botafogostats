@@ -1,0 +1,32 @@
+name: Diagnóstico das APIs
+
+# Execução manual: aba Actions > Diagnóstico das APIs > Run workflow.
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnostico:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependências
+        run: pip install requests
+
+      - name: Rodar diagnóstico
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: python scripts/diagnostico_apis.py --saida diagnostico.json
+
+      - name: Guardar resultado
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: diagnostico
+          path: diagnostico.json
+          if-no-files-found: ignore
