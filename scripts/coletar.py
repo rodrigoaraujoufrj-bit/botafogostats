@@ -49,7 +49,7 @@ CANCELADO = {"CANCELLED"}
 PONTOS = {"V": 3, "E": 1, "D": 0}
 
 N_SIMULACOES = 20_000
-ENCOLHIMENTO = 6  # jogos "fictícios" na média da liga, para estabilizar a força dos times
+ENCOLHIMENTO = 15  # jogos "fictícios" na média da liga; valor escolhido com scripts/calibrar.py
 
 
 # ----------------------------------------------------------------------------
@@ -288,7 +288,7 @@ def tabela_oficial(standings: dict, time_id: int) -> list[dict]:
 # ----------------------------------------------------------------------------
 # Simulação do restante do campeonato (Monte Carlo com gols de Poisson)
 # ----------------------------------------------------------------------------
-def simular(df: pd.DataFrame, time_id: int) -> dict | None:
+def simular(df: pd.DataFrame, time_id: int, encolhimento: float = ENCOLHIMENTO) -> dict | None:
     """Força de ataque e defesa de cada time, separada por mando, estimada pelos
     gols dos jogos encerrados e puxada para a média da liga (ENCOLHIMENTO).
     Cada jogo restante vira dois sorteios de Poisson. Semente fixa derivada dos
@@ -304,7 +304,7 @@ def simular(df: pd.DataFrame, time_id: int) -> dict | None:
 
     def forca(grupo: str, gols: str, media: float) -> pd.Series:
         g = enc.groupby(grupo)[gols].agg(["sum", "count"]).reindex(times, fill_value=0)
-        return ((g["sum"] + ENCOLHIMENTO * media) / (g["count"] + ENCOLHIMENTO)) / media
+        return ((g["sum"] + encolhimento * media) / (g["count"] + encolhimento)) / media
 
     ataque_casa = forca("mandante_id", "gm", mu_casa)
     defesa_casa = forca("mandante_id", "gv", mu_fora)   # gols sofridos em casa
@@ -367,7 +367,69 @@ def simular(df: pd.DataFrame, time_id: int) -> dict | None:
         },
         "posicao_mais_provavel": int(dist.argmax() + 1),
         "distribuicao_posicao": [round(100 * float(x), 2) for x in dist],
+        "numeros_magicos": numeros_magicos(pts, pos_t, i, base, rest, times),
     }
+
+
+# Faixas: (chave, rótulo, precisa terminar entre os k primeiros)
+ZONAS = [
+    ("titulo", "Título", 1),
+    ("g4", "G4 · Libertadores direto", 4),
+    ("libertadores", "Libertadores (até o 5º)", 5),
+    ("sul_americana", "Sul-Americana (até o 11º)", 11),
+    ("permanencia", "Escapar do rebaixamento", 16),
+]
+
+
+def numeros_magicos(pts: np.ndarray, pos_t: np.ndarray, i: int, base: pd.DataFrame,
+                    rest: pd.DataFrame, times: pd.Index) -> list[dict]:
+    """Pontos que o time precisa para terminar entre os k primeiros.
+
+    Em cada simulação, a linha de corte é o k-ésimo melhor entre os OUTROS 19
+    times: para ficar entre os k primeiros é preciso superá-lo (empates ficam
+    de fora, porque dependem de critérios de desempate).
+      referencia = mediana da linha de corte + 1  (acima da linha em ~50% dos cenários)
+      segura     = percentil 90 da linha de corte + 1 (acima em ~90% dos cenários)
+    garantido / eliminado são cálculos matemáticos conservadores com os pontos
+    atuais e os pontos máximos possíveis de cada time."""
+    outros = np.delete(pts, i, axis=1)
+    outros_ord = -np.sort(-outros, axis=1)  # decrescente
+
+    jogos_rest = pd.concat([rest["mandante_id"], rest["visitante_id"]]).value_counts().reindex(times, fill_value=0)
+    agora = base["pts"].to_numpy(int)
+    maximo = agora + 3 * jogos_rest.to_numpy(int)
+    meu_agora, meu_max = int(agora[i]), int(maximo[i])
+    outros_agora, outros_max = np.delete(agora, i), np.delete(maximo, i)
+    meus_jogos = int(jogos_rest.iloc[i])
+
+    # Chance de terminar na faixa para cada total de pontos possível do time
+    # (empate com a linha de corte conta meio, aproximando o desempate).
+    faixa_pts = np.arange(meu_agora, meu_max + 1)
+    curvas = {}
+
+    saida = []
+    for chave, rotulo, k in ZONAS:
+        corte = outros_ord[:, k - 1]
+        curvas[chave] = [
+            round(100 * float((p > corte).mean() + 0.5 * (p == corte).mean()), 2) for p in faixa_pts
+        ]
+        referencia = int(np.median(corte)) + 1
+        segura = int(np.percentile(corte, 90)) + 1
+        falta = max(0, segura - meu_agora)
+        saida.append({
+            "chave": chave,
+            "rotulo": rotulo,
+            "posicao": k,
+            "referencia": referencia,
+            "segura": segura,
+            "falta_segura": falta,
+            "vitorias_necessarias": math.ceil(falta / 3),
+            "alcancavel": segura <= meu_max,
+            "prob": round(100 * float((pos_t <= k).mean()), 1),
+            "garantido": bool((outros_max >= meu_agora).sum() <= k - 1),
+            "eliminado": bool((outros_agora > meu_max).sum() >= k),
+        })
+    return {"zonas": saida, "chances": {"pontos": faixa_pts.tolist(), **curvas}}
 
 
 # ----------------------------------------------------------------------------
