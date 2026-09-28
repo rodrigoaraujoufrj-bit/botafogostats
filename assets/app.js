@@ -45,6 +45,7 @@
     renderHero();
     renderRecorte();
     renderCenarios();
+    renderMagicos();
     renderGraficos();
     renderMandos();
     renderChegada();
@@ -262,6 +263,116 @@
       <span class="ext" style="left:0">${P.min}</span><span class="ext" style="right:0">${P.max}</span>`;
     $("p-faixa-nota").textContent = `Metade das simulações termina nessa faixa. Mediana: ${P.mediana} pontos.`;
     $("dist-nota").textContent = `Posição mais provável: ${S.posicao_mais_provavel}º`;
+  }
+
+  // ------------------------------------------------------------------------
+  // Números mágicos
+  // ------------------------------------------------------------------------
+  const COR_ZONA = { titulo: "--acento", g4: "--acento", libertadores: "--g6", sul_americana: "--seq-2", permanencia: "--ruim" };
+
+  function renderMagicos() {
+    const S = D.simulacao;
+    const M = S && S.numeros_magicos;
+    const Z = M && M.zonas;
+    if (!Z) {
+      $("magicos").hidden = true;
+      return;
+    }
+    const agora = D.recortes.todos.resumo.pontos;
+    const rest = D.jogos_restantes;
+    const maximo = agora + 3 * rest;
+
+    // Régua
+    const valores = [agora, S.pontos.p25, S.pontos.p75, ...Z.map((z) => z.segura)];
+    const lo = Math.floor((Math.min(...valores) - 3) / 5) * 5;
+    const hi = Math.ceil((Math.max(...valores) + 3) / 5) * 5;
+    const x = (v) => ((v - lo) / (hi - lo)) * 100;
+    const ticks = [];
+    for (let v = lo; v <= hi; v += 5) ticks.push(`<i class="tick" style="left:${x(v)}%"></i><span class="tick-rot" style="left:${x(v)}%">${v}</span>`);
+    // rótulos das linhas de corte em duas fileiras para não colidirem
+    const ultimo = [-Infinity, -Infinity];
+    const cortes = [...Z].sort((a, b) => a.segura - b.segura).map((z) => {
+      const px = x(z.segura);
+      const fileira = px - ultimo[0] >= 16 ? 0 : px - ultimo[1] >= 16 ? 1 : ultimo[0] <= ultimo[1] ? 0 : 1;
+      ultimo[fileira] = px;
+      const topo = fileira === 0 ? 0 : 36;
+      const curto = { titulo: "Título", g4: "G4", libertadores: "Libertadores", sul_americana: "Sul-Americana", permanencia: "Escapar" }[z.chave];
+      return `<span class="corte" style="left:${px}%;top:${topo + 30}px;height:${86 - topo - 30}px;background:var(${COR_ZONA[z.chave]})"></span>
+        <span class="corte-rot" style="left:${px}%;top:${topo}px">${curto}<b>${z.segura}</b></span>`;
+    });
+    $("mg-regua").innerHTML =
+      `<div class="eixo"></div>${ticks.join("")}` +
+      `<div class="proj" style="left:${x(S.pontos.p25)}%;width:${x(S.pontos.p75) - x(S.pontos.p25)}%" title="Projeção: ${S.pontos.p25} a ${S.pontos.p75} pts"></div>` +
+      cortes.join("") +
+      `<div class="hoje" style="left:${x(agora)}%" title="Botafogo hoje: ${agora} pts"></div><span class="hoje-rot" style="left:${x(agora)}%">Hoje: ${agora} pts</span>`;
+
+    // Lista
+    $("mg-lista").innerHTML = Z.map((z) => {
+      let status = "";
+      let precisa;
+      if (z.garantido) {
+        status = '<span class="status ok">garantido</span>';
+        precisa = "Vaga matematicamente garantida.";
+      } else if (z.eliminado) {
+        status = '<span class="status fora">eliminado</span>';
+        precisa = `Matematicamente fora: mesmo vencendo tudo (máximo de ${maximo} pts) não alcança.`;
+      } else if (z.falta_segura === 0) {
+        status = '<span class="status ok">na zona segura</span>';
+        precisa = `Já tem a pontuação segura. Chance atual: <b>${pct(z.prob)}</b>.`;
+      } else if (!z.alcancavel) {
+        status = '<span class="status neutro">fora de alcance</span>';
+        precisa = `A pontuação segura passa do máximo possível (${maximo} pts). Chance atual: <b>${pct(z.prob)}</b>.`;
+      } else {
+        precisa = `Faltam <b>${z.falta_segura} pts</b>: ${z.vitorias_necessarias} vitórias em ${rest} jogos. Chance atual: <b>${pct(z.prob)}</b>.`;
+      }
+      return `<div class="mg">
+        <span class="barra-z" style="background:var(${COR_ZONA[z.chave]})"></span>
+        <div class="nome"><span>${z.posicao === 1 ? "1º lugar" : `até o ${z.posicao}º`}</span><b>${esc(z.rotulo)}${status}</b></div>
+        <div class="val"><span>Referência</span><b>${z.referencia}</b></div>
+        <div class="val"><span>Segura</span><b>${z.segura}</b></div>
+        <div class="precisa">${precisa}</div>
+        <button type="button" data-meta="${z.segura}" title="Levar ${z.segura} pts para o simulador de meta">Simular</button>
+      </div>`;
+    }).join("");
+    $("mg-lista").querySelectorAll("button[data-meta]").forEach((b) =>
+      b.addEventListener("click", () => {
+        const m = $("c-meta");
+        m.value = Math.min(Number(m.max), Math.max(Number(m.min), Number(b.dataset.meta)));
+        renderAlvo();
+        m.closest(".card").scrollIntoView({ behavior: "smooth", block: "center" });
+      })
+    );
+    renderChances(M.chances, S.pontos.mediana);
+    $("mg-nota").textContent =
+      "Empates na pontuação de corte ficam de fora, porque dependem dos critérios de desempate. " +
+      "“Garantido” e “eliminado” são cálculos conservadores feitos com os pontos máximos que cada time ainda pode somar.";
+  }
+
+  function renderChances(C, mediana) {
+    const zonas = [["titulo", "Título"], ["g4", "G4"], ["libertadores", "Libertadores"], ["sul_americana", "Sul-Americana"], ["permanencia", "Escapar do Z4"]];
+    // só as pontuações em que alguma faixa ainda está em aberto
+    const idx = C.pontos.map((_, i) => i).filter((i) => zonas.some(([k]) => C[k][i] > 0.5 && C[k][i] < 99.5));
+    if (!idx.length) {
+      $("mg-chances").innerHTML = '<p class="nota">Nenhuma faixa em aberto.</p>';
+      return;
+    }
+    const de = Math.max(0, idx[0] - 1);
+    const ate = Math.min(C.pontos.length - 1, idx.at(-1) + 1);
+    const seq = ["--seq-0", "--seq-1", "--seq-2", "--seq-3", "--seq-3"].map(css);
+    const nivel = (v) => (v < 0.5 ? 0 : v < 25 ? 1 : v < 60 ? 2 : 3);
+    const linhas = [];
+    for (let i = ate; i >= de; i--) {
+      const p = C.pontos[i];
+      linhas.push(`<tr class="${p === mediana ? "destaque" : ""}"><td><b>${p}</b>${p === mediana ? ' <span class="pilula">projeção</span>' : ""}</td>${zonas
+        .map(([k]) => {
+          const v = C[k][i];
+          const n = nivel(v);
+          const txt = v >= 99.95 ? "100%" : v < 0.05 ? "0%" : pct(v, v < 10 || v > 90 ? 1 : 0);
+          return `<td class="num"><span class="cel-chance" style="background:${seq[n]};color:${n >= 3 ? css("--card") : css("--tinta")}">${txt}</span></td>`;
+        })
+        .join("")}</tr>`);
+    }
+    $("mg-chances").innerHTML = `<table class="tabela chances"><thead><tr><th>Pontos finais</th>${zonas.map(([, n]) => `<th class="num">${n}</th>`).join("")}</tr></thead><tbody>${linhas.join("")}</tbody></table>`;
   }
 
   // ------------------------------------------------------------------------

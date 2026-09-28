@@ -20,6 +20,7 @@
       <div class="nav-links">
         <a href="#painel">Campanha</a>
         <a href="#cenarios">Cenários</a>
+        <a href="#magicos">Números mágicos</a>
         <a href="#evolucao">Evolução</a>
         <a href="#jogos">Jogos</a>
         <a href="#tabela">Tabela</a>
@@ -118,6 +119,33 @@
       <article class="card" id="cen-dist-card">
         <header class="card-topo"><div><p class="eyebrow">Distribuição</p><h3>Posição final nas simulações</h3></div><p class="nota" id="dist-nota"></p></header>
         <div class="grafico baixo"><canvas id="g-dist" role="img" aria-label="Probabilidade de cada posição final"></canvas></div>
+      </article>
+    </section>
+
+    <!-- Números mágicos -->
+    <section id="magicos" class="secao">
+      <div class="secao-topo">
+        <div>
+          <p class="eyebrow">Números mágicos</p>
+          <h2>Quantos pontos para cada objetivo</h2>
+        </div>
+        <p class="secao-nota">Linha de corte de cada faixa nas simulações. <b>Referência</b>: fica acima da linha em cerca de metade dos cenários. <b>Segura</b>: em 90% deles.</p>
+      </div>
+      <article class="card">
+        <header class="card-topo">
+          <div><p class="eyebrow">Régua de pontos</p><h3>Onde estão as linhas de corte</h3></div>
+          <div class="legenda"><span><i class="ponto-hoje"></i>Botafogo hoje</span><span><i class="faixa-leg"></i>Projeção (metade dos cenários)</span></div>
+        </header>
+        <div class="regua" id="mg-regua" role="img" aria-label="Pontuação segura de cada faixa comparada aos pontos do Botafogo"></div>
+        <div class="magicos" id="mg-lista"></div>
+        <p class="nota" id="mg-nota"></p>
+      </article>
+      <article class="card">
+        <header class="card-topo">
+          <div><p class="eyebrow">Tabela de chances</p><h3>Se o Botafogo terminar com…</h3></div>
+          <p class="nota">Chance de terminar em cada faixa para cada total de pontos. Só aparecem as pontuações em que alguma faixa está em aberto.</p>
+        </header>
+        <div class="rolagem"><div id="mg-chances"></div></div>
       </article>
     </section>
 
