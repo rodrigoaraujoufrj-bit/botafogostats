@@ -30,13 +30,16 @@ painel trabalha com 1º e 2º tempo (2º tempo = placar final menos placar do in
 - Mando de campo, sequências, rendimento por blocos de 10 jogos
 - Antes e depois do intervalo: gols por tempo, viradas e pontos ganhos ou perdidos no 2º tempo
 - Cenários: probabilidades de título, G4, Libertadores, Sul-Americana e rebaixamento
+- Mural: frases diretas com quanto falta para cada objetivo, momento, próximo jogo e ritmo
 - Números mágicos: pontuação de referência (~50% dos cenários) e segura (90%) para cada faixa, com tabela de chance por total de pontos
 
 ### Como os cenários são calculados
 
 Simulação de Monte Carlo (20 mil repetições) dos jogos restantes de **todo** o campeonato.
 A força de ataque e de defesa de cada time, separada por mando, vem dos gols dos jogos
-encerrados, puxada para a média da liga para não exagerar amostras pequenas. Cada jogo vira
+encerrados, puxada para a média da liga (o equivalente a 15 jogos na média) para não exagerar
+amostras pequenas. O valor foi escolhido com `scripts/calibrar.py`, comparando a pontuação de 50%
+de chance em cada faixa com as tabelas da UFMG e do GE. Cada jogo vira
 dois sorteios de Poisson. Limitações: não considera desfalques, mudança de técnico nem
 calendário de outras competições; o desempate usa pontos, vitórias, saldo e gols pró.
 São estimativas, não previsões garantidas.

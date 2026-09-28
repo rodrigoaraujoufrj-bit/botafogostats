@@ -49,7 +49,7 @@ CANCELADO = {"CANCELLED"}
 PONTOS = {"V": 3, "E": 1, "D": 0}
 
 N_SIMULACOES = 20_000
-ENCOLHIMENTO = 6  # jogos "fictícios" na média da liga, para estabilizar a força dos times
+ENCOLHIMENTO = 15  # jogos "fictícios" na média da liga; valor escolhido com scripts/calibrar.py
 
 
 # ----------------------------------------------------------------------------

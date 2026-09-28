@@ -43,6 +43,7 @@
 
   function renderTudo() {
     renderHero();
+    renderMural();
     renderRecorte();
     renderCenarios();
     renderMagicos();
@@ -97,6 +98,97 @@
     $("h-jogos").textContent = `${r.jogos} de 38`;
     $("h-periodo").textContent = D.periodo.inicio ? `${dataCurta(D.periodo.inicio)} a ${dataCurta(D.periodo.fim)}` : "–";
     $("h-atualizado").textContent = D.atualizado_em ? dataHora(D.atualizado_em) : "–";
+  }
+
+  // ------------------------------------------------------------------------
+  // Mural: frases diretas sobre o que está em jogo
+  // ------------------------------------------------------------------------
+  function sequenciaAtual(jogos) {
+    const res = jogos.filter((j) => j.resultado).map((j) => j.resultado);
+    if (!res.length) return null;
+    const conta = (ok) => {
+      let n = 0;
+      for (let i = res.length - 1; i >= 0 && ok(res[i]); i--) n++;
+      return n;
+    };
+    const ult = res.at(-1);
+    const vit = conta((r) => r === "V");
+    const der = conta((r) => r === "D");
+    const invicto = conta((r) => r !== "D");
+    const semVencer = conta((r) => r !== "V");
+    if (ult === "V") return vit >= 2 ? { n: vit, txt: "vitórias seguidas", cor: "--bom" } : { n: invicto, txt: invicto === 1 ? "jogo sem perder" : "jogos sem perder", cor: "--bom" };
+    if (ult === "D") return der >= 2 ? { n: der, txt: "derrotas seguidas", cor: "--ruim" } : { n: semVencer, txt: semVencer === 1 ? "jogo sem vencer" : "jogos sem vencer", cor: "--ruim" };
+    return invicto >= semVencer
+      ? { n: invicto, txt: "jogos sem perder", cor: "--neutro" }
+      : { n: semVencer, txt: "jogos sem vencer", cor: "--neutro" };
+  }
+
+  function renderMural() {
+    const r = D.recortes.todos.resumo;
+    const rest = D.jogos_restantes;
+    const maximo = r.pontos + 3 * rest;
+    const ptsPos = (p) => (D.tabela.find((l) => l.posicao === p) || {}).pontos;
+    const Z = D.simulacao && D.simulacao.numeros_magicos ? D.simulacao.numeros_magicos.zonas : [];
+    const zona = (k) => Z.find((z) => z.chave === k);
+    const cards = [];
+
+    const cardZona = (k, alvo, cor, hoje) => {
+      const z = zona(k);
+      if (!z) return;
+      let num, frase, sub;
+      if (z.garantido) {
+        num = "✓"; frase = `${alvo[0].toUpperCase()}${alvo.slice(1)}: garantido matematicamente`; sub = hoje;
+      } else if (z.eliminado) {
+        num = "✗"; frase = `${alvo[0].toUpperCase()}${alvo.slice(1)}: sem chance matemática`; sub = `Mesmo vencendo tudo, chega a ${maximo} pontos. ${hoje}`;
+      } else if (z.falta_segura === 0) {
+        num = "✓"; frase = `Pontuação segura atingida para ${alvo}`; sub = `Chance estimada: <b>${pct(z.prob)}</b>. ${hoje}`;
+      } else if (!z.alcancavel) {
+        num = `${z.segura}`; frase = `Para ${alvo} com segurança seriam ${z.segura} pontos, mas o máximo possível é ${maximo}`;
+        sub = `Depende de tropeços dos rivais. Chance estimada: <b>${pct(z.prob)}</b>. ${hoje}`;
+      } else {
+        const v = z.vitorias_necessarias;
+        num = `${z.falta_segura}<small>pts</small>`;
+        frase = `Faltam ${z.falta_segura} pontos para ${alvo} com segurança`;
+        sub = `${v === rest ? `Só vencendo os ${rest} jogos restantes` : `${v} ${v === 1 ? "vitória" : "vitórias"} nos ${rest} jogos restantes`} (${pct((100 * z.falta_segura) / (3 * rest), 0)} de aproveitamento). ${hoje}`;
+      }
+      cards.push({ cor, eyebrow: z.rotulo, num, frase, sub });
+    };
+
+    const p17 = ptsPos(17), p11 = ptsPos(11), p5 = ptsPos(5);
+    const pts = (n) => `${n} ${n === 1 ? "pt" : "pts"}`;
+    const dist = (d, acima, abaixo) => (d > 0 ? `Hoje: <b>${pts(d)} ${acima}</b>.` : d < 0 ? `Hoje: <b>${pts(-d)} ${abaixo}</b>.` : `Hoje: <b>empatado</b> com a linha.`);
+    cardZona("permanencia", "fugir do rebaixamento", "--ruim", p17 != null ? dist(r.pontos - p17, "acima do Z4", "dentro do Z4") : "");
+    cardZona("sul_americana", "a Sul-Americana", "--seq-2", p11 != null ? dist(r.pontos - p11, "acima do 11º", "atrás do 11º") : "");
+    cardZona("libertadores", "o G5 (Libertadores)", "--g6", p5 != null ? dist(r.pontos - p5, "acima do 5º", "atrás do 5º") : "");
+
+    const seqA = sequenciaAtual(D.jogos);
+    if (seqA) {
+      const u = D.jogos.filter((j) => j.resultado).at(-1);
+      const nomeUlt = { V: "vitória", E: "empate", D: "derrota" }[u.resultado];
+      const placarUlt = u.mando === "casa" ? `Botafogo ${u.gp} x ${u.gc} ${esc(u.adversario)}` : `${esc(u.adversario)} ${u.gc} x ${u.gp} Botafogo`;
+      const frase = seqA.n >= 2 ? `${seqA.n} ${seqA.txt}` : `Vem de ${nomeUlt}: ${placarUlt}`;
+      cards.push({ cor: seqA.cor, eyebrow: "Momento", num: seqA.n >= 2 ? `${seqA.n}` : `<span class="chip ${u.resultado}" style="width:52px;height:52px;font-size:1.4rem">${u.resultado}</span>`, frase, sub: `Últimos 5: ${D.recortes.todos.sequencias.ultimos5.resultados.join(" ")} · ${D.recortes.todos.sequencias.ultimos5.pontos} de 15 pontos.` });
+    }
+
+    const prox = D.proximos[0];
+    if (prox) {
+      const quando = new Date(prox.data).toLocaleString("pt-BR", { weekday: "long", hour: "2-digit", minute: "2-digit", timeZone: TZ });
+      const jogo = prox.mando === "casa" ? `Botafogo x ${esc(prox.adversario)}` : `${esc(prox.adversario)} x Botafogo`;
+      cards.push({ cor: "--acento", eyebrow: `Próximo jogo${prox.rodada ? ` · rodada ${prox.rodada}` : ""}`, num: new Date(prox.data).toLocaleDateString("pt-BR", { day: "2-digit", month: "2-digit", timeZone: TZ }), frase: `<span class="rec-adv">${img(prox.adversario_escudo)}${jogo}</span>`, sub: `${quando} · ${prox.mando === "casa" ? "em casa" : "fora de casa"}.`, destaque: true });
+    }
+
+    const proj = Math.round(r.pontos + (r.media_pontos ?? 0) * rest);
+    const S = D.simulacao;
+    cards.push({
+      cor: "--acento", eyebrow: "Ritmo", num: `${proj}<small>pts</small>`,
+      frase: `No ritmo atual, o Botafogo termina com cerca de ${proj} pontos`,
+      sub: S ? `A simulação, que pesa a força de cada adversário, aponta <b>${S.pontos.p25} a ${S.pontos.p75}</b> em metade dos cenários.` : "",
+    });
+
+    $("mural-grade").innerHTML = cards
+      .map((c) => `<article class="card recado ${c.destaque ? "destaque" : ""}" style="--cor-recado:var(${c.cor})">
+        <p class="eyebrow">${c.eyebrow}</p><div class="rec-num">${c.num}</div><p class="rec-frase">${c.frase}</p><p class="rec-sub">${c.sub}</p></article>`)
+      .join("");
   }
 
   // ------------------------------------------------------------------------
