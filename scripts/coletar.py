@@ -288,7 +288,7 @@ def tabela_oficial(standings: dict, time_id: int) -> list[dict]:
 # ----------------------------------------------------------------------------
 # Simulação do restante do campeonato (Monte Carlo com gols de Poisson)
 # ----------------------------------------------------------------------------
-def simular(df: pd.DataFrame, time_id: int) -> dict | None:
+def simular(df: pd.DataFrame, time_id: int, encolhimento: float = ENCOLHIMENTO) -> dict | None:
     """Força de ataque e defesa de cada time, separada por mando, estimada pelos
     gols dos jogos encerrados e puxada para a média da liga (ENCOLHIMENTO).
     Cada jogo restante vira dois sorteios de Poisson. Semente fixa derivada dos
@@ -304,7 +304,7 @@ def simular(df: pd.DataFrame, time_id: int) -> dict | None:
 
     def forca(grupo: str, gols: str, media: float) -> pd.Series:
         g = enc.groupby(grupo)[gols].agg(["sum", "count"]).reindex(times, fill_value=0)
-        return ((g["sum"] + ENCOLHIMENTO * media) / (g["count"] + ENCOLHIMENTO)) / media
+        return ((g["sum"] + encolhimento * media) / (g["count"] + encolhimento)) / media
 
     ataque_casa = forca("mandante_id", "gm", mu_casa)
     defesa_casa = forca("mandante_id", "gv", mu_fora)   # gols sofridos em casa
