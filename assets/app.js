@@ -252,7 +252,7 @@
     set("p-titulo", S.prob.titulo);
     set("p-g4", S.prob.g4);
     set("p-z4", S.prob.z4, true);
-    $("p-g6").textContent = `Top 6: ${pct(S.prob.g6)} · 7º ao 12º: ${pct(S.prob.sul_americana)}`;
+    $("p-g6").textContent = `Libertadores (1º ao 5º): ${pct(S.prob.libertadores)} · Sul-Americana (6º ao 11º): ${pct(S.prob.sul_americana)}`;
 
     const P = S.pontos;
     $("p-faixa").textContent = `${P.p25}–${P.p75}`;
@@ -570,7 +570,7 @@
   // Classificação
   // ------------------------------------------------------------------------
   function renderClassificacao() {
-    const zona = (p) => (p <= 4 ? "z-g4" : p <= 6 ? "z-g6" : p >= 17 ? "z-z4" : "");
+    const zona = (p) => (p <= 4 ? "z-g4" : p === 5 ? "z-pre" : p <= 11 ? "z-sula" : p >= 17 ? "z-z4" : "");
     $("t-classif").innerHTML = `<thead><tr><th></th><th>#</th><th>Time</th><th class="num">Pts</th><th class="num">J</th><th class="num">V</th><th class="num">E</th><th class="num">D</th><th class="num">GP</th><th class="num">GC</th><th class="num">SG</th><th class="num">Aprov.</th></tr></thead><tbody>${D.tabela
       .map(
         (l) => `<tr class="${zona(l.posicao)} ${l.destaque ? "destaque" : ""}">

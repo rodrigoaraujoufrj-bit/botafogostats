@@ -32,6 +32,19 @@ SAIDA = Path(__file__).resolve().parent.parent / "data" / "dashboard.json"
 
 RODADAS = 38
 ENCERRADO = {"FINISHED", "AWARDED"}
+
+# Nomes curtos da API que não são os usados no Brasil
+NOMES = {
+    "Paranaense": "Athletico-PR",
+    "Mineiro": "Atlético-MG",
+    "Clube do Remo": "Remo",
+    "Vasco da Gama": "Vasco",
+}
+
+
+def nome(time: dict) -> str:
+    n = time.get("shortName") or time["name"]
+    return NOMES.get(n, n)
 CANCELADO = {"CANCELLED"}
 PONTOS = {"V": 3, "E": 1, "D": 0}
 
@@ -65,10 +78,10 @@ def jogos_para_dataframe(jogos: list[dict]) -> pd.DataFrame:
             "data": m["utcDate"],
             "status": m["status"],
             "mandante_id": m["homeTeam"]["id"],
-            "mandante": m["homeTeam"].get("shortName") or m["homeTeam"]["name"],
+            "mandante": nome(m["homeTeam"]),
             "mandante_escudo": m["homeTeam"].get("crest"),
             "visitante_id": m["awayTeam"]["id"],
-            "visitante": m["awayTeam"].get("shortName") or m["awayTeam"]["name"],
+            "visitante": nome(m["awayTeam"]),
             "visitante_escudo": m["awayTeam"].get("crest"),
             "gm": ft.get("home"),
             "gv": ft.get("away"),
@@ -261,7 +274,7 @@ def tabela_oficial(standings: dict, time_id: int) -> list[dict]:
     return [
         {
             "posicao": l["position"],
-            "time": l["team"].get("shortName") or l["team"]["name"],
+            "time": nome(l["team"]),
             "escudo": l["team"].get("crest"),
             "destaque": l["team"]["id"] == time_id,
             "jogos": l["playedGames"], "vitorias": l["won"], "empates": l["draw"],
@@ -343,8 +356,8 @@ def simular(df: pd.DataFrame, time_id: int) -> dict | None:
         "prob": {
             "titulo": round(100 * float((pos_t == 1).mean()), 1),
             "g4": round(100 * float((pos_t <= 4).mean()), 1),
-            "g6": round(100 * float((pos_t <= 6).mean()), 1),
-            "sul_americana": round(100 * float(((pos_t >= 7) & (pos_t <= 12)).mean()), 1),
+            "libertadores": round(100 * float((pos_t <= 5).mean()), 1),  # 1º-4º direto, 5º pré
+            "sul_americana": round(100 * float(((pos_t >= 6) & (pos_t <= 11)).mean()), 1),
             "z4": round(100 * float((pos_t >= 17).mean()), 1),
         },
         "pontos": {

@@ -250,7 +250,7 @@ main { padding-bottom: 32px; }
 .legenda .ponto, .ponto { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
 .ponto.V { background: var(--bom); } .ponto.E { background: var(--neutro); } .ponto.D { background: var(--ruim); }
 .barra-leg { width: 4px; height: 14px; border-radius: 2px; display: inline-block; }
-.barra-leg.g4 { background: var(--acento); } .barra-leg.g6 { background: var(--g6); } .barra-leg.z4 { background: var(--ruim); }
+.barra-leg.g4 { background: var(--acento); } .barra-leg.pre { background: var(--g6); } .barra-leg.sula { background: var(--seq-1); } .barra-leg.z4 { background: var(--ruim); }
 
 .mini-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-bottom: 14px; }
 .mini-kpis.dois { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 16px 0 0; }
@@ -379,7 +379,8 @@ main { padding-bottom: 32px; }
 .tabela td.faixa-cel { padding-left: 0; padding-right: 0; width: 4px; }
 .tabela td.faixa-cel i { display: block; width: 4px; height: 22px; border-radius: 0 3px 3px 0; }
 .tabela tr.z-g4 td.faixa-cel i { background: var(--acento); }
-.tabela tr.z-g6 td.faixa-cel i { background: var(--g6); }
+.tabela tr.z-pre td.faixa-cel i { background: var(--g6); }
+.tabela tr.z-sula td.faixa-cel i { background: var(--seq-1); }
 .tabela tr.z-z4 td.faixa-cel i { background: var(--ruim); }
 .tabela tr.V td.faixa-cel i { background: var(--bom); }
 .tabela tr.E td.faixa-cel i { background: var(--neutro); }
