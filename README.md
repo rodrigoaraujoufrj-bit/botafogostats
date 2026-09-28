@@ -29,7 +29,8 @@ painel trabalha com 1º e 2º tempo (2º tempo = placar final menos placar do in
 - Posição e pontos rodada a rodada, comparados ao líder, ao 4º e ao 17º colocado
 - Mando de campo, sequências, rendimento por blocos de 10 jogos
 - Antes e depois do intervalo: gols por tempo, viradas e pontos ganhos ou perdidos no 2º tempo
-- Cenários: probabilidades de título, G4, top 6 e rebaixamento
+- Cenários: probabilidades de título, G4, Libertadores, Sul-Americana e rebaixamento
+- Números mágicos: pontuação de referência (~50% dos cenários) e segura (90%) para cada faixa, com tabela de chance por total de pontos
 
 ### Como os cenários são calculados
 
