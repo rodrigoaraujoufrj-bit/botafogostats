@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-10-08T06:20:24+00:00",
+ "atualizado_em": "2026-10-08T13:48:15+00:00",
  "fonte": "football-data.org",
  "temporada": 2026,
  "competicao": "Brasileirão Série A",
@@ -20,16 +20,16 @@
    "resumo": {
     "jogos": 29,
     "vitorias": 9,
-    "empates": 9,
-    "derrotas": 11,
-    "pontos": 36,
-    "gols_pro": 43,
+    "empates": 8,
+    "derrotas": 12,
+    "pontos": 35,
+    "gols_pro": 42,
     "gols_contra": 47,
-    "saldo": -4,
-    "aproveitamento": 41.4,
-    "media_pontos": 1.24,
+    "saldo": -5,
+    "aproveitamento": 40.2,
+    "media_pontos": 1.21,
     "taxa_vitoria": 31.0,
-    "sem_derrota": 62.1
+    "sem_derrota": 58.6
    },
    "tempos": {
     "jogos_considerados": 29,
@@ -37,13 +37,13 @@
      "pro": 17,
      "contra": 22,
      "saldo": -5,
-     "participacao_pro": 39.5
+     "participacao_pro": 40.5
     },
     "segundo": {
-     "pro": 26,
+     "pro": 25,
      "contra": 25,
-     "saldo": 1,
-     "participacao_pro": 60.5
+     "saldo": 0,
+     "participacao_pro": 59.5
     }
    },
    "intervalo": {
@@ -60,18 +60,18 @@
      },
      "D": {
       "V": 0,
-      "E": 5,
-      "D": 7
+      "E": 4,
+      "D": 8
      }
     },
-    "melhoraram": 9,
+    "melhoraram": 8,
     "pioraram": 5,
-    "mantiveram": 15,
+    "mantiveram": 16,
     "viradas_a_favor": 0,
     "viradas_contra": 3,
     "pontos_no_intervalo": 35,
-    "pontos_reais": 36,
-    "saldo_pontos": 1
+    "pontos_reais": 35,
+    "saldo_pontos": 0
    },
    "sequencias": {
     "maior_invicta": 5,
@@ -85,9 +85,9 @@
       "E",
       "V",
       "D",
-      "E"
+      "D"
      ],
-     "pontos": 6,
+     "pontos": 5,
      "disputados": 15
     }
    }
@@ -96,16 +96,16 @@
    "resumo": {
     "jogos": 15,
     "vitorias": 5,
-    "empates": 7,
-    "derrotas": 3,
-    "pontos": 22,
-    "gols_pro": 26,
+    "empates": 6,
+    "derrotas": 4,
+    "pontos": 21,
+    "gols_pro": 25,
     "gols_contra": 22,
-    "saldo": 4,
-    "aproveitamento": 48.9,
-    "media_pontos": 1.47,
+    "saldo": 3,
+    "aproveitamento": 46.7,
+    "media_pontos": 1.4,
     "taxa_vitoria": 33.3,
-    "sem_derrota": 80.0
+    "sem_derrota": 73.3
    },
    "tempos": {
     "jogos_considerados": 15,
@@ -113,13 +113,13 @@
      "pro": 8,
      "contra": 10,
      "saldo": -2,
-     "participacao_pro": 30.8
+     "participacao_pro": 32.0
     },
     "segundo": {
-     "pro": 18,
+     "pro": 17,
      "contra": 12,
-     "saldo": 6,
-     "participacao_pro": 69.2
+     "saldo": 5,
+     "participacao_pro": 68.0
     }
    },
    "intervalo": {
@@ -136,18 +136,18 @@
      },
      "D": {
       "V": 0,
-      "E": 3,
-      "D": 2
+      "E": 2,
+      "D": 3
      }
     },
-    "melhoraram": 5,
+    "melhoraram": 4,
     "pioraram": 2,
-    "mantiveram": 8,
+    "mantiveram": 9,
     "viradas_a_favor": 0,
     "viradas_contra": 1,
     "pontos_no_intervalo": 20,
-    "pontos_reais": 22,
-    "saldo_pontos": 2
+    "pontos_reais": 21,
+    "saldo_pontos": 1
    },
    "sequencias": {
     "maior_invicta": 4,
@@ -161,9 +161,9 @@
       "E",
       "E",
       "V",
-      "E"
+      "D"
      ],
-     "pontos": 6,
+     "pontos": 5,
      "disputados": 15
     }
    }
@@ -260,9 +260,9 @@
   },
   {
    "rotulo": "Jogos 21 a 29",
-   "pontos": 7,
+   "pontos": 6,
    "disputados": 27,
-   "aproveitamento": 25.9
+   "aproveitamento": 22.2
   }
  ],
  "evolucao": [
@@ -521,7 +521,7 @@
   {
    "rodada": 29,
    "posicao": 13,
-   "pontos": 36,
+   "pontos": 35,
    "jogos": 29,
    "pontos_lider": 60,
    "pontos_g4": 48,
@@ -535,38 +535,38 @@
    "titulo": 0.0,
    "g4": 0.0,
    "libertadores": 0.2,
-   "sul_americana": 44.5,
-   "z4": 5.5
+   "sul_americana": 34.5,
+   "z4": 8.8
   },
   "pontos": {
-   "p25": 46,
-   "mediana": 48,
-   "p75": 51,
-   "min": 36,
-   "max": 63,
-   "mais_provavel": 49
+   "p25": 45,
+   "mediana": 47,
+   "p75": 50,
+   "min": 35,
+   "max": 62,
+   "mais_provavel": 48
   },
-  "posicao_mais_provavel": 11,
+  "posicao_mais_provavel": 13,
   "distribuicao_posicao": [
    0.0,
    0.0,
    0.0,
-   0.04,
-   0.18,
-   0.8,
-   2.83,
-   6.46,
-   9.66,
-   11.68,
-   13.06,
-   13.04,
-   12.27,
-   10.39,
-   8.43,
-   5.62,
-   3.94,
-   1.49,
-   0.11,
+   0.03,
+   0.12,
+   0.61,
+   1.82,
+   4.37,
+   7.12,
+   9.57,
+   11.0,
+   12.29,
+   12.83,
+   12.17,
+   10.56,
+   8.67,
+   5.56,
+   2.96,
+   0.3,
    0.0
   ],
   "numeros_magicos": {
@@ -577,8 +577,8 @@
      "posicao": 1,
      "referencia": 80,
      "segura": 84,
-     "falta_segura": 48,
-     "vitorias_necessarias": 16,
+     "falta_segura": 49,
+     "vitorias_necessarias": 17,
      "alcancavel": false,
      "prob": 0.0,
      "garantido": false,
@@ -590,7 +590,7 @@
      "posicao": 4,
      "referencia": 64,
      "segura": 67,
-     "falta_segura": 31,
+     "falta_segura": 32,
      "vitorias_necessarias": 11,
      "alcancavel": false,
      "prob": 0.0,
@@ -603,7 +603,7 @@
      "posicao": 5,
      "referencia": 62,
      "segura": 65,
-     "falta_segura": 29,
+     "falta_segura": 30,
      "vitorias_necessarias": 10,
      "alcancavel": false,
      "prob": 0.2,
@@ -616,10 +616,10 @@
      "posicao": 11,
      "referencia": 50,
      "segura": 52,
-     "falta_segura": 16,
+     "falta_segura": 17,
      "vitorias_necessarias": 6,
      "alcancavel": true,
-     "prob": 44.7,
+     "prob": 34.6,
      "garantido": false,
      "eliminado": false
     },
@@ -627,18 +627,19 @@
      "chave": "permanencia",
      "rotulo": "Escapar do rebaixamento",
      "posicao": 16,
-     "referencia": 42,
+     "referencia": 43,
      "segura": 45,
-     "falta_segura": 9,
-     "vitorias_necessarias": 3,
+     "falta_segura": 10,
+     "vitorias_necessarias": 4,
      "alcancavel": true,
-     "prob": 94.5,
+     "prob": 91.2,
      "garantido": false,
      "eliminado": false
     }
    ],
    "chances": {
     "pontos": [
+     35,
      36,
      37,
      38,
@@ -665,8 +666,7 @@
      59,
      60,
      61,
-     62,
-     63
+     62
     ],
     "titulo": [
      0.0,
@@ -719,14 +719,14 @@
      0.0,
      0.0,
      0.0,
-     0.01,
-     0.1,
-     0.58,
-     2.19,
-     6.51,
-     15.1,
-     28.22,
-     44.7
+     0.0,
+     0.03,
+     0.14,
+     0.65,
+     2.48,
+     6.91,
+     15.37,
+     28.77
     ],
     "libertadores": [
      0.0,
@@ -747,16 +747,16 @@
      0.0,
      0.0,
      0.0,
+     0.0,
      0.01,
-     0.11,
-     0.59,
-     2.4,
-     7.09,
-     16.6,
-     31.28,
-     49.45,
-     67.65,
-     82.13
+     0.1,
+     0.58,
+     2.29,
+     6.96,
+     16.69,
+     31.92,
+     50.43,
+     68.43
     ],
     "sul_americana": [
      0.0,
@@ -766,20 +766,20 @@
      0.0,
      0.0,
      0.0,
-     0.01,
-     0.09,
-     0.75,
-     3.82,
-     13.28,
-     31.36,
-     54.96,
-     76.53,
-     90.28,
-     96.86,
-     99.27,
-     99.87,
-     99.99,
-     100.0,
+     0.0,
+     0.0,
+     0.05,
+     0.41,
+     2.48,
+     9.8,
+     25.7,
+     48.97,
+     72.19,
+     88.23,
+     96.22,
+     99.11,
+     99.85,
+     99.98,
      100.0,
      100.0,
      100.0,
@@ -789,19 +789,19 @@
      100.0
     ],
     "permanencia": [
-     0.24,
-     1.01,
-     3.41,
-     9.43,
-     21.73,
-     40.73,
-     62.36,
-     81.11,
-     92.99,
-     98.15,
-     99.71,
-     99.98,
-     100.0,
+     0.03,
+     0.17,
+     0.76,
+     2.82,
+     8.17,
+     18.94,
+     36.11,
+     57.25,
+     77.04,
+     90.79,
+     97.42,
+     99.52,
+     99.95,
      100.0,
      100.0,
      100.0,
@@ -1386,13 +1386,13 @@
    "mando": "casa",
    "adversario": "Vasco",
    "adversario_escudo": "https://crests.football-data.org/1780.png",
-   "gp": 2,
+   "gp": 1,
    "gc": 2,
    "gp_int": 0,
    "gc_int": 1,
-   "resultado": "E",
-   "pontos": 1,
-   "acumulado": 36
+   "resultado": "D",
+   "pontos": 0,
+   "acumulado": 35
   },
   {
    "rodada": 30,
