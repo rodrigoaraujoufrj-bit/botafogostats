@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-10-04T01:42:55+00:00",
+ "atualizado_em": "2026-10-08T06:20:24+00:00",
  "fonte": "football-data.org",
  "temporada": 2026,
  "competicao": "Brasileirão Série A",
@@ -8,42 +8,42 @@
   "nome": "Botafogo",
   "escudo": "https://crests.football-data.org/1770.png"
  },
- "rodada_atual": 28,
- "posicao": 12,
- "jogos_restantes": 10,
+ "rodada_atual": 29,
+ "posicao": 13,
+ "jogos_restantes": 9,
  "periodo": {
   "inicio": "2026-01-30T00:30:00+00:00",
-  "fim": "2026-09-19T20:00:00+00:00"
+  "fim": "2026-10-07T23:30:00+00:00"
  },
  "recortes": {
   "todos": {
    "resumo": {
-    "jogos": 28,
+    "jogos": 29,
     "vitorias": 9,
-    "empates": 8,
+    "empates": 9,
     "derrotas": 11,
-    "pontos": 35,
-    "gols_pro": 41,
-    "gols_contra": 45,
+    "pontos": 36,
+    "gols_pro": 43,
+    "gols_contra": 47,
     "saldo": -4,
-    "aproveitamento": 41.7,
-    "media_pontos": 1.25,
-    "taxa_vitoria": 32.1,
-    "sem_derrota": 60.7
+    "aproveitamento": 41.4,
+    "media_pontos": 1.24,
+    "taxa_vitoria": 31.0,
+    "sem_derrota": 62.1
    },
    "tempos": {
-    "jogos_considerados": 28,
+    "jogos_considerados": 29,
     "primeiro": {
      "pro": 17,
-     "contra": 21,
-     "saldo": -4,
-     "participacao_pro": 41.5
+     "contra": 22,
+     "saldo": -5,
+     "participacao_pro": 39.5
     },
     "segundo": {
-     "pro": 24,
-     "contra": 24,
-     "saldo": 0,
-     "participacao_pro": 58.5
+     "pro": 26,
+     "contra": 25,
+     "saldo": 1,
+     "participacao_pro": 60.5
     }
    },
    "intervalo": {
@@ -60,18 +60,18 @@
      },
      "D": {
       "V": 0,
-      "E": 4,
+      "E": 5,
       "D": 7
      }
     },
-    "melhoraram": 8,
+    "melhoraram": 9,
     "pioraram": 5,
     "mantiveram": 15,
     "viradas_a_favor": 0,
     "viradas_contra": 3,
     "pontos_no_intervalo": 35,
-    "pontos_reais": 35,
-    "saldo_pontos": 0
+    "pontos_reais": 36,
+    "saldo_pontos": 1
    },
    "sequencias": {
     "maior_invicta": 5,
@@ -81,45 +81,45 @@
     "sem_marcar": 7,
     "ultimos5": {
      "resultados": [
-      "D",
       "E",
       "E",
       "V",
-      "D"
+      "D",
+      "E"
      ],
-     "pontos": 5,
+     "pontos": 6,
      "disputados": 15
     }
    }
   },
   "casa": {
    "resumo": {
-    "jogos": 14,
+    "jogos": 15,
     "vitorias": 5,
-    "empates": 6,
+    "empates": 7,
     "derrotas": 3,
-    "pontos": 21,
-    "gols_pro": 24,
-    "gols_contra": 20,
+    "pontos": 22,
+    "gols_pro": 26,
+    "gols_contra": 22,
     "saldo": 4,
-    "aproveitamento": 50.0,
-    "media_pontos": 1.5,
-    "taxa_vitoria": 35.7,
-    "sem_derrota": 78.6
+    "aproveitamento": 48.9,
+    "media_pontos": 1.47,
+    "taxa_vitoria": 33.3,
+    "sem_derrota": 80.0
    },
    "tempos": {
-    "jogos_considerados": 14,
+    "jogos_considerados": 15,
     "primeiro": {
      "pro": 8,
-     "contra": 9,
-     "saldo": -1,
-     "participacao_pro": 33.3
+     "contra": 10,
+     "saldo": -2,
+     "participacao_pro": 30.8
     },
     "segundo": {
-     "pro": 16,
-     "contra": 11,
-     "saldo": 5,
-     "participacao_pro": 66.7
+     "pro": 18,
+     "contra": 12,
+     "saldo": 6,
+     "participacao_pro": 69.2
     }
    },
    "intervalo": {
@@ -136,18 +136,18 @@
      },
      "D": {
       "V": 0,
-      "E": 2,
+      "E": 3,
       "D": 2
      }
     },
-    "melhoraram": 4,
+    "melhoraram": 5,
     "pioraram": 2,
     "mantiveram": 8,
     "viradas_a_favor": 0,
     "viradas_contra": 1,
     "pontos_no_intervalo": 20,
-    "pontos_reais": 21,
-    "saldo_pontos": 1
+    "pontos_reais": 22,
+    "saldo_pontos": 2
    },
    "sequencias": {
     "maior_invicta": 4,
@@ -157,11 +157,11 @@
     "sem_marcar": 3,
     "ultimos5": {
      "resultados": [
-      "E",
       "D",
       "E",
       "E",
-      "V"
+      "V",
+      "E"
      ],
      "pontos": 6,
      "disputados": 15
@@ -259,10 +259,10 @@
    "aproveitamento": 53.3
   },
   {
-   "rotulo": "Jogos 21 a 28",
-   "pontos": 6,
-   "disputados": 24,
-   "aproveitamento": 25.0
+   "rotulo": "Jogos 21 a 29",
+   "pontos": 7,
+   "disputados": 27,
+   "aproveitamento": 25.9
   }
  ],
  "evolucao": [
@@ -517,48 +517,57 @@
    "pontos_lider": 60,
    "pontos_g4": 48,
    "pontos_z4": 29
+  },
+  {
+   "rodada": 29,
+   "posicao": 13,
+   "pontos": 36,
+   "jogos": 29,
+   "pontos_lider": 60,
+   "pontos_g4": 48,
+   "pontos_z4": 31
   }
  ],
  "simulacao": {
   "simulacoes": 20000,
-  "jogos_restantes_liga": 101,
+  "jogos_restantes_liga": 95,
   "prob": {
    "titulo": 0.0,
-   "g4": 0.2,
-   "libertadores": 0.7,
-   "sul_americana": 48.8,
-   "z4": 3.7
+   "g4": 0.0,
+   "libertadores": 0.2,
+   "sul_americana": 44.5,
+   "z4": 5.5
   },
   "pontos": {
    "p25": 46,
-   "mediana": 49,
-   "p75": 52,
+   "mediana": 48,
+   "p75": 51,
    "min": 36,
    "max": 63,
    "mais_provavel": 49
   },
-  "posicao_mais_provavel": 12,
+  "posicao_mais_provavel": 11,
   "distribuicao_posicao": [
    0.0,
    0.0,
-   0.01,
-   0.15,
-   0.53,
-   1.68,
-   4.06,
-   7.64,
-   10.19,
-   12.39,
-   12.81,
-   13.49,
-   11.77,
-   9.35,
-   7.32,
-   4.92,
-   2.53,
-   1.01,
-   0.12,
-   0.01
+   0.0,
+   0.04,
+   0.18,
+   0.8,
+   2.83,
+   6.46,
+   9.66,
+   11.68,
+   13.06,
+   13.04,
+   12.27,
+   10.39,
+   8.43,
+   5.62,
+   3.94,
+   1.49,
+   0.11,
+   0.0
   ],
   "numeros_magicos": {
    "zonas": [
@@ -568,8 +577,8 @@
      "posicao": 1,
      "referencia": 80,
      "segura": 84,
-     "falta_segura": 49,
-     "vitorias_necessarias": 17,
+     "falta_segura": 48,
+     "vitorias_necessarias": 16,
      "alcancavel": false,
      "prob": 0.0,
      "garantido": false,
@@ -581,10 +590,10 @@
      "posicao": 4,
      "referencia": 64,
      "segura": 67,
-     "falta_segura": 32,
+     "falta_segura": 31,
      "vitorias_necessarias": 11,
      "alcancavel": false,
-     "prob": 0.2,
+     "prob": 0.0,
      "garantido": false,
      "eliminado": false
     },
@@ -594,10 +603,10 @@
      "posicao": 5,
      "referencia": 62,
      "segura": 65,
-     "falta_segura": 30,
+     "falta_segura": 29,
      "vitorias_necessarias": 10,
-     "alcancavel": true,
-     "prob": 0.7,
+     "alcancavel": false,
+     "prob": 0.2,
      "garantido": false,
      "eliminado": false
     },
@@ -607,10 +616,10 @@
      "posicao": 11,
      "referencia": 50,
      "segura": 52,
-     "falta_segura": 17,
+     "falta_segura": 16,
      "vitorias_necessarias": 6,
      "alcancavel": true,
-     "prob": 49.5,
+     "prob": 44.7,
      "garantido": false,
      "eliminado": false
     },
@@ -619,18 +628,17 @@
      "rotulo": "Escapar do rebaixamento",
      "posicao": 16,
      "referencia": 42,
-     "segura": 44,
+     "segura": 45,
      "falta_segura": 9,
      "vitorias_necessarias": 3,
      "alcancavel": true,
-     "prob": 96.3,
+     "prob": 94.5,
      "garantido": false,
      "eliminado": false
     }
    ],
    "chances": {
     "pontos": [
-     35,
      36,
      37,
      38,
@@ -658,14 +666,9 @@
      60,
      61,
      62,
-     63,
-     64,
-     65
+     63
     ],
     "titulo": [
-     0.0,
-     0.0,
-     0.0,
      0.0,
      0.0,
      0.0,
@@ -716,17 +719,14 @@
      0.0,
      0.0,
      0.0,
-     0.0,
      0.01,
-     0.14,
-     0.8,
-     2.9,
-     8.03,
-     17.38,
-     31.06,
-     47.71,
-     63.98,
-     77.68
+     0.1,
+     0.58,
+     2.19,
+     6.51,
+     15.1,
+     28.22,
+     44.7
     ],
     "libertadores": [
      0.0,
@@ -747,19 +747,16 @@
      0.0,
      0.0,
      0.0,
-     0.0,
-     0.02,
-     0.14,
-     0.78,
-     3.07,
-     8.85,
-     19.81,
-     35.9,
-     54.31,
-     71.25,
-     84.28,
-     92.55,
-     96.94
+     0.01,
+     0.11,
+     0.59,
+     2.4,
+     7.09,
+     16.6,
+     31.28,
+     49.45,
+     67.65,
+     82.13
     ],
     "sul_americana": [
      0.0,
@@ -769,22 +766,19 @@
      0.0,
      0.0,
      0.0,
-     0.0,
-     0.0,
-     0.07,
-     0.59,
-     3.14,
-     10.96,
-     26.47,
-     48.16,
-     69.96,
-     85.92,
-     94.83,
-     98.64,
-     99.76,
-     99.96,
-     100.0,
-     100.0,
+     0.01,
+     0.09,
+     0.75,
+     3.82,
+     13.28,
+     31.36,
+     54.96,
+     76.53,
+     90.28,
+     96.86,
+     99.27,
+     99.87,
+     99.99,
      100.0,
      100.0,
      100.0,
@@ -795,21 +789,18 @@
      100.0
     ],
     "permanencia": [
-     0.07,
-     0.44,
-     1.82,
-     5.57,
-     13.9,
-     28.49,
-     48.4,
-     69.1,
-     85.3,
-     94.6,
-     98.5,
-     99.75,
-     99.97,
-     100.0,
-     100.0,
+     0.24,
+     1.01,
+     3.41,
+     9.43,
+     21.73,
+     40.73,
+     62.36,
+     81.11,
+     92.99,
+     98.15,
+     99.71,
+     99.98,
      100.0,
      100.0,
      100.0,
@@ -831,21 +822,6 @@
   }
  },
  "proximos": [
-  {
-   "rodada": 29,
-   "data": "2026-10-07T23:30:00+00:00",
-   "status": "TIMED",
-   "mando": "casa",
-   "adversario": "Vasco",
-   "adversario_escudo": "https://crests.football-data.org/1780.png",
-   "gp": null,
-   "gc": null,
-   "gp_int": null,
-   "gc_int": null,
-   "resultado": null,
-   "pontos": null,
-   "acumulado": null
-  },
   {
    "rodada": 30,
    "data": "2026-10-12T19:00:00+00:00",
@@ -1406,17 +1382,17 @@
   {
    "rodada": 29,
    "data": "2026-10-07T23:30:00+00:00",
-   "status": "TIMED",
+   "status": "FINISHED",
    "mando": "casa",
    "adversario": "Vasco",
    "adversario_escudo": "https://crests.football-data.org/1780.png",
-   "gp": null,
-   "gc": null,
-   "gp_int": null,
-   "gc_int": null,
-   "resultado": null,
-   "pontos": null,
-   "acumulado": null
+   "gp": 2,
+   "gc": 2,
+   "gp_int": 0,
+   "gc_int": 1,
+   "resultado": "E",
+   "pontos": 1,
+   "acumulado": 36
   },
   {
    "rodada": 30,
@@ -1613,6 +1589,20 @@
   },
   {
    "posicao": 5,
+   "time": "Cruzeiro",
+   "escudo": "https://crests.football-data.org/1771.png",
+   "destaque": false,
+   "jogos": 29,
+   "vitorias": 14,
+   "empates": 6,
+   "derrotas": 9,
+   "pontos": 48,
+   "gols_pro": 44,
+   "gols_contra": 40,
+   "saldo": 4
+  },
+  {
+   "posicao": 6,
    "time": "Bahia",
    "escudo": "https://crests.football-data.org/1777.png",
    "destaque": false,
@@ -1624,20 +1614,6 @@
    "gols_pro": 43,
    "gols_contra": 35,
    "saldo": 8
-  },
-  {
-   "posicao": 6,
-   "time": "Cruzeiro",
-   "escudo": "https://crests.football-data.org/1771.png",
-   "destaque": false,
-   "jogos": 28,
-   "vitorias": 13,
-   "empates": 6,
-   "derrotas": 9,
-   "pontos": 45,
-   "gols_pro": 42,
-   "gols_contra": 40,
-   "saldo": 2
   },
   {
    "posicao": 7,
@@ -1686,13 +1662,13 @@
    "time": "Bragantino",
    "escudo": "https://crests.football-data.org/4286.png",
    "destaque": false,
-   "jogos": 28,
+   "jogos": 29,
    "vitorias": 10,
-   "empates": 6,
+   "empates": 7,
    "derrotas": 12,
-   "pontos": 36,
-   "gols_pro": 33,
-   "gols_contra": 32,
+   "pontos": 37,
+   "gols_pro": 34,
+   "gols_contra": 33,
    "saldo": 1
   },
   {
@@ -1700,125 +1676,125 @@
    "time": "São Paulo",
    "escudo": "https://crests.football-data.org/1776.png",
    "destaque": false,
-   "jogos": 28,
+   "jogos": 29,
    "vitorias": 10,
    "empates": 6,
-   "derrotas": 12,
+   "derrotas": 13,
    "pontos": 36,
    "gols_pro": 33,
-   "gols_contra": 32,
-   "saldo": 1
+   "gols_contra": 34,
+   "saldo": -1
   },
   {
    "posicao": 12,
-   "time": "Botafogo",
-   "escudo": "https://crests.football-data.org/1770.png",
-   "destaque": true,
-   "jogos": 28,
-   "vitorias": 9,
-   "empates": 8,
-   "derrotas": 11,
-   "pontos": 35,
-   "gols_pro": 41,
-   "gols_contra": 45,
-   "saldo": -4
-  },
-  {
-   "posicao": 13,
    "time": "Vitória",
    "escudo": "https://crests.football-data.org/1782.png",
    "destaque": false,
-   "jogos": 28,
-   "vitorias": 9,
+   "jogos": 29,
+   "vitorias": 10,
    "empates": 6,
    "derrotas": 13,
-   "pontos": 33,
-   "gols_pro": 28,
+   "pontos": 36,
+   "gols_pro": 32,
    "gols_contra": 42,
-   "saldo": -14
+   "saldo": -10
+  },
+  {
+   "posicao": 13,
+   "time": "Botafogo",
+   "escudo": "https://crests.football-data.org/1770.png",
+   "destaque": true,
+   "jogos": 29,
+   "vitorias": 9,
+   "empates": 8,
+   "derrotas": 12,
+   "pontos": 35,
+   "gols_pro": 42,
+   "gols_contra": 47,
+   "saldo": -5
   },
   {
    "posicao": 14,
-   "time": "Corinthians",
-   "escudo": "https://crests.football-data.org/1779.png",
+   "time": "Vasco",
+   "escudo": "https://crests.football-data.org/1780.png",
    "destaque": false,
    "jogos": 28,
-   "vitorias": 8,
-   "empates": 8,
+   "vitorias": 9,
+   "empates": 7,
    "derrotas": 12,
-   "pontos": 32,
-   "gols_pro": 29,
-   "gols_contra": 32,
-   "saldo": -3
+   "pontos": 34,
+   "gols_pro": 36,
+   "gols_contra": 42,
+   "saldo": -6
   },
   {
    "posicao": 15,
    "time": "Mirassol",
    "escudo": "https://crests.football-data.org/4364.png",
    "destaque": false,
-   "jogos": 28,
+   "jogos": 29,
    "vitorias": 8,
-   "empates": 8,
+   "empates": 9,
    "derrotas": 12,
-   "pontos": 32,
-   "gols_pro": 33,
-   "gols_contra": 42,
+   "pontos": 33,
+   "gols_pro": 34,
+   "gols_contra": 43,
    "saldo": -9
   },
   {
    "posicao": 16,
-   "time": "Vasco",
-   "escudo": "https://crests.football-data.org/1780.png",
+   "time": "Corinthians",
+   "escudo": "https://crests.football-data.org/1779.png",
    "destaque": false,
-   "jogos": 27,
+   "jogos": 29,
    "vitorias": 8,
-   "empates": 7,
-   "derrotas": 12,
-   "pontos": 31,
-   "gols_pro": 34,
-   "gols_contra": 41,
-   "saldo": -7
+   "empates": 8,
+   "derrotas": 13,
+   "pontos": 32,
+   "gols_pro": 30,
+   "gols_contra": 34,
+   "saldo": -4
   },
   {
    "posicao": 17,
-   "time": "Grêmio",
-   "escudo": "https://crests.football-data.org/1767.png",
-   "destaque": false,
-   "jogos": 28,
-   "vitorias": 7,
-   "empates": 8,
-   "derrotas": 13,
-   "pontos": 29,
-   "gols_pro": 30,
-   "gols_contra": 38,
-   "saldo": -8
-  },
-  {
-   "posicao": 18,
    "time": "Internacional",
    "escudo": "https://crests.football-data.org/6684.png",
    "destaque": false,
-   "jogos": 28,
-   "vitorias": 6,
+   "jogos": 29,
+   "vitorias": 7,
    "empates": 10,
    "derrotas": 12,
-   "pontos": 28,
-   "gols_pro": 30,
-   "gols_contra": 36,
-   "saldo": -6
+   "pontos": 31,
+   "gols_pro": 32,
+   "gols_contra": 37,
+   "saldo": -5
+  },
+  {
+   "posicao": 18,
+   "time": "Grêmio",
+   "escudo": "https://crests.football-data.org/1767.png",
+   "destaque": false,
+   "jogos": 29,
+   "vitorias": 7,
+   "empates": 9,
+   "derrotas": 13,
+   "pontos": 30,
+   "gols_pro": 31,
+   "gols_contra": 39,
+   "saldo": -8
   },
   {
    "posicao": 19,
    "time": "Remo",
    "escudo": "https://crests.football-data.org/4287.png",
    "destaque": false,
-   "jogos": 28,
+   "jogos": 29,
    "vitorias": 5,
-   "empates": 8,
+   "empates": 9,
    "derrotas": 15,
-   "pontos": 23,
-   "gols_pro": 32,
-   "gols_contra": 47,
+   "pontos": 24,
+   "gols_pro": 33,
+   "gols_contra": 48,
    "saldo": -15
   },
   {
@@ -1826,14 +1802,14 @@
    "time": "Chapecoense",
    "escudo": "https://crests.football-data.org/1772_large.png",
    "destaque": false,
-   "jogos": 27,
+   "jogos": 28,
    "vitorias": 3,
    "empates": 9,
-   "derrotas": 15,
+   "derrotas": 16,
    "pontos": 18,
    "gols_pro": 29,
-   "gols_contra": 53,
-   "saldo": -24
+   "gols_contra": 57,
+   "saldo": -28
   }
  ]
 }
