@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-10-14T01:17:19+00:00",
+ "atualizado_em": "2026-10-17T07:03:47+00:00",
  "fonte": "football-data.org",
  "temporada": 2026,
  "competicao": "Brasileirão Série A",
@@ -8,7 +8,7 @@
   "nome": "Botafogo",
   "escudo": "https://crests.football-data.org/1770.png"
  },
- "rodada_atual": 30,
+ "rodada_atual": 31,
  "posicao": 12,
  "jogos_restantes": 8,
  "periodo": {
@@ -535,17 +535,26 @@
    "pontos_lider": 64,
    "pontos_g4": 51,
    "pontos_z4": 32
+  },
+  {
+   "rodada": 31,
+   "posicao": 13,
+   "pontos": 36,
+   "jogos": 30,
+   "pontos_lider": 64,
+   "pontos_g4": 51,
+   "pontos_z4": 32
   }
  ],
  "simulacao": {
   "simulacoes": 20000,
-  "jogos_restantes_liga": 81,
+  "jogos_restantes_liga": 80,
   "prob": {
    "titulo": 0.0,
    "g4": 0.0,
-   "libertadores": 0.0,
-   "sul_americana": 35.9,
-   "z4": 6.6
+   "libertadores": 0.1,
+   "sul_americana": 34.7,
+   "z4": 6.8
   },
   "pontos": {
    "p25": 45,
@@ -553,7 +562,7 @@
    "p75": 50,
    "min": 36,
    "max": 60,
-   "mais_provavel": 47
+   "mais_provavel": 46
   },
   "posicao_mais_provavel": 13,
   "distribuicao_posicao": [
@@ -561,21 +570,21 @@
    0.0,
    0.0,
    0.01,
-   0.03,
-   0.27,
-   1.2,
-   3.83,
-   7.7,
-   10.3,
-   12.54,
-   13.49,
-   14.2,
-   12.29,
-   10.14,
-   7.39,
-   4.46,
-   1.93,
-   0.21,
+   0.04,
+   0.3,
+   1.09,
+   3.94,
+   7.54,
+   9.7,
+   12.12,
+   13.84,
+   13.92,
+   12.52,
+   10.61,
+   7.58,
+   4.47,
+   2.12,
+   0.19,
    0.0
   ],
   "numeros_magicos": {
@@ -615,7 +624,7 @@
      "falta_segura": 29,
      "vitorias_necessarias": 10,
      "alcancavel": false,
-     "prob": 0.0,
+     "prob": 0.1,
      "garantido": false,
      "eliminado": false
     },
@@ -628,7 +637,7 @@
      "falta_segura": 16,
      "vitorias_necessarias": 6,
      "alcancavel": true,
-     "prob": 35.9,
+     "prob": 34.7,
      "garantido": false,
      "eliminado": false
     },
@@ -641,7 +650,7 @@
      "falta_segura": 8,
      "vitorias_necessarias": 3,
      "alcancavel": true,
-     "prob": 93.4,
+     "prob": 93.2,
      "garantido": false,
      "eliminado": false
     }
@@ -724,9 +733,9 @@
      0.0,
      0.0,
      0.03,
-     0.23,
-     1.22,
-     4.33
+     0.25,
+     1.24,
+     4.29
     ],
     "libertadores": [
      0.0,
@@ -747,13 +756,13 @@
      0.0,
      0.0,
      0.0,
-     0.0,
+     0.01,
      0.03,
-     0.27,
-     1.35,
-     4.75,
-     12.73,
-     26.25
+     0.22,
+     1.16,
+     4.4,
+     12.32,
+     26.26
     ],
     "sul_americana": [
      0.0,
@@ -763,18 +772,18 @@
      0.0,
      0.0,
      0.0,
-     0.0,
-     0.09,
-     0.8,
-     4.38,
-     14.9,
-     34.09,
-     58.17,
-     79.16,
-     91.86,
-     97.59,
-     99.51,
-     99.92,
+     0.01,
+     0.08,
+     0.71,
+     4.18,
+     14.24,
+     32.88,
+     56.85,
+     78.19,
+     91.43,
+     97.44,
+     99.46,
+     99.91,
      99.99,
      100.0,
      100.0,
@@ -783,18 +792,18 @@
      100.0
     ],
     "permanencia": [
-     0.32,
-     1.38,
-     4.79,
-     12.7,
-     27.28,
-     47.64,
-     69.19,
-     86.22,
-     95.58,
-     99.04,
+     0.41,
+     1.65,
+     5.04,
+     12.86,
+     27.51,
+     47.83,
+     69.22,
+     86.19,
+     95.6,
+     99.08,
      99.89,
-     99.99,
+     99.98,
      100.0,
      100.0,
      100.0,
@@ -1677,6 +1686,20 @@
   },
   {
    "posicao": 13,
+   "time": "Mirassol",
+   "escudo": "https://crests.football-data.org/4364.png",
+   "destaque": false,
+   "jogos": 31,
+   "vitorias": 9,
+   "empates": 9,
+   "derrotas": 13,
+   "pontos": 36,
+   "gols_pro": 36,
+   "gols_contra": 44,
+   "saldo": -8
+  },
+  {
+   "posicao": 14,
    "time": "Vitória",
    "escudo": "https://crests.football-data.org/1782.png",
    "destaque": false,
@@ -1690,7 +1713,7 @@
    "saldo": -11
   },
   {
-   "posicao": 14,
+   "posicao": 15,
    "time": "Vasco",
    "escudo": "https://crests.football-data.org/1780.png",
    "destaque": false,
@@ -1704,32 +1727,18 @@
    "saldo": -6
   },
   {
-   "posicao": 15,
-   "time": "Mirassol",
-   "escudo": "https://crests.football-data.org/4364.png",
-   "destaque": false,
-   "jogos": 30,
-   "vitorias": 8,
-   "empates": 9,
-   "derrotas": 13,
-   "pontos": 33,
-   "gols_pro": 34,
-   "gols_contra": 44,
-   "saldo": -10
-  },
-  {
    "posicao": 16,
    "time": "Internacional",
    "escudo": "https://crests.football-data.org/6684.png",
    "destaque": false,
-   "jogos": 30,
+   "jogos": 31,
    "vitorias": 7,
    "empates": 11,
-   "derrotas": 12,
+   "derrotas": 13,
    "pontos": 32,
    "gols_pro": 33,
-   "gols_contra": 38,
-   "saldo": -5
+   "gols_contra": 40,
+   "saldo": -7
   },
   {
    "posicao": 17,
