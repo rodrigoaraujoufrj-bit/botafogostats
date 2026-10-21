@@ -1,5 +1,5 @@
 {
- "atualizado_em": "2026-10-20T17:21:58+00:00",
+ "atualizado_em": "2026-10-21T00:41:49+00:00",
  "fonte": "football-data.org",
  "temporada": 2026,
  "competicao": "Brasileirão Série A",
@@ -10,52 +10,52 @@
  },
  "rodada_atual": 31,
  "posicao": 11,
- "jogos_restantes": 9,
+ "jogos_restantes": 7,
  "periodo": {
   "inicio": "2026-01-30T00:30:00+00:00",
-  "fim": "2026-10-07T23:30:00+00:00"
+  "fim": "2026-10-17T21:00:00+00:00"
  },
  "recortes": {
   "todos": {
    "resumo": {
-    "jogos": 29,
-    "vitorias": 9,
-    "empates": 8,
+    "jogos": 31,
+    "vitorias": 10,
+    "empates": 9,
     "derrotas": 12,
-    "pontos": 35,
-    "gols_pro": 42,
-    "gols_contra": 47,
-    "saldo": -5,
-    "aproveitamento": 40.2,
-    "media_pontos": 1.21,
-    "taxa_vitoria": 31.0,
-    "sem_derrota": 58.6
+    "pontos": 39,
+    "gols_pro": 44,
+    "gols_contra": 48,
+    "saldo": -4,
+    "aproveitamento": 41.9,
+    "media_pontos": 1.26,
+    "taxa_vitoria": 32.3,
+    "sem_derrota": 61.3
    },
    "tempos": {
-    "jogos_considerados": 29,
+    "jogos_considerados": 31,
     "primeiro": {
-     "pro": 17,
-     "contra": 22,
-     "saldo": -5,
-     "participacao_pro": 40.5
+     "pro": 19,
+     "contra": 23,
+     "saldo": -4,
+     "participacao_pro": 43.2
     },
     "segundo": {
      "pro": 25,
      "contra": 25,
      "saldo": 0,
-     "participacao_pro": 59.5
+     "participacao_pro": 56.8
     }
    },
    "intervalo": {
     "matriz": {
      "V": {
-      "V": 5,
+      "V": 6,
       "E": 1,
       "D": 3
      },
      "E": {
       "V": 4,
-      "E": 3,
+      "E": 4,
       "D": 1
      },
      "D": {
@@ -66,66 +66,66 @@
     },
     "melhoraram": 8,
     "pioraram": 5,
-    "mantiveram": 16,
+    "mantiveram": 18,
     "viradas_a_favor": 0,
     "viradas_contra": 3,
-    "pontos_no_intervalo": 35,
-    "pontos_reais": 35,
+    "pontos_no_intervalo": 39,
+    "pontos_reais": 39,
     "saldo_pontos": 0
    },
    "sequencias": {
     "maior_invicta": 5,
     "maior_vitorias": 2,
     "maior_sem_vencer": 6,
-    "sem_sofrer_gol": 4,
+    "sem_sofrer_gol": 5,
     "sem_marcar": 7,
     "ultimos5": {
      "resultados": [
-      "E",
-      "E",
       "V",
       "D",
-      "D"
+      "D",
+      "E",
+      "V"
      ],
-     "pontos": 5,
+     "pontos": 7,
      "disputados": 15
     }
    }
   },
   "casa": {
    "resumo": {
-    "jogos": 15,
-    "vitorias": 5,
+    "jogos": 16,
+    "vitorias": 6,
     "empates": 6,
     "derrotas": 4,
-    "pontos": 21,
-    "gols_pro": 25,
+    "pontos": 24,
+    "gols_pro": 26,
     "gols_contra": 22,
-    "saldo": 3,
-    "aproveitamento": 46.7,
-    "media_pontos": 1.4,
-    "taxa_vitoria": 33.3,
-    "sem_derrota": 73.3
+    "saldo": 4,
+    "aproveitamento": 50.0,
+    "media_pontos": 1.5,
+    "taxa_vitoria": 37.5,
+    "sem_derrota": 75.0
    },
    "tempos": {
-    "jogos_considerados": 15,
+    "jogos_considerados": 16,
     "primeiro": {
-     "pro": 8,
+     "pro": 9,
      "contra": 10,
-     "saldo": -2,
-     "participacao_pro": 32.0
+     "saldo": -1,
+     "participacao_pro": 34.6
     },
     "segundo": {
      "pro": 17,
      "contra": 12,
      "saldo": 5,
-     "participacao_pro": 68.0
+     "participacao_pro": 65.4
     }
    },
    "intervalo": {
     "matriz": {
      "V": {
-      "V": 3,
+      "V": 4,
       "E": 1,
       "D": 1
      },
@@ -142,60 +142,60 @@
     },
     "melhoraram": 4,
     "pioraram": 2,
-    "mantiveram": 9,
+    "mantiveram": 10,
     "viradas_a_favor": 0,
     "viradas_contra": 1,
-    "pontos_no_intervalo": 20,
-    "pontos_reais": 21,
+    "pontos_no_intervalo": 23,
+    "pontos_reais": 24,
     "saldo_pontos": 1
    },
    "sequencias": {
     "maior_invicta": 4,
     "maior_vitorias": 2,
     "maior_sem_vencer": 5,
-    "sem_sofrer_gol": 3,
+    "sem_sofrer_gol": 4,
     "sem_marcar": 3,
     "ultimos5": {
      "resultados": [
-      "D",
       "E",
       "E",
       "V",
-      "D"
+      "D",
+      "V"
      ],
-     "pontos": 5,
+     "pontos": 8,
      "disputados": 15
     }
    }
   },
   "fora": {
    "resumo": {
-    "jogos": 14,
+    "jogos": 15,
     "vitorias": 4,
-    "empates": 2,
+    "empates": 3,
     "derrotas": 8,
-    "pontos": 14,
-    "gols_pro": 17,
-    "gols_contra": 25,
+    "pontos": 15,
+    "gols_pro": 18,
+    "gols_contra": 26,
     "saldo": -8,
     "aproveitamento": 33.3,
     "media_pontos": 1.0,
-    "taxa_vitoria": 28.6,
-    "sem_derrota": 42.9
+    "taxa_vitoria": 26.7,
+    "sem_derrota": 46.7
    },
    "tempos": {
-    "jogos_considerados": 14,
+    "jogos_considerados": 15,
     "primeiro": {
-     "pro": 9,
-     "contra": 12,
+     "pro": 10,
+     "contra": 13,
      "saldo": -3,
-     "participacao_pro": 52.9
+     "participacao_pro": 55.6
     },
     "segundo": {
      "pro": 8,
      "contra": 13,
      "saldo": -5,
-     "participacao_pro": 47.1
+     "participacao_pro": 44.4
     }
    },
    "intervalo": {
@@ -207,7 +207,7 @@
      },
      "E": {
       "V": 2,
-      "E": 0,
+      "E": 1,
       "D": 1
      },
      "D": {
@@ -218,28 +218,28 @@
     },
     "melhoraram": 4,
     "pioraram": 3,
-    "mantiveram": 7,
+    "mantiveram": 8,
     "viradas_a_favor": 0,
     "viradas_contra": 2,
-    "pontos_no_intervalo": 15,
-    "pontos_reais": 14,
+    "pontos_no_intervalo": 16,
+    "pontos_reais": 15,
     "saldo_pontos": -1
    },
    "sequencias": {
     "maior_invicta": 4,
     "maior_vitorias": 2,
-    "maior_sem_vencer": 3,
+    "maior_sem_vencer": 4,
     "sem_sofrer_gol": 1,
     "sem_marcar": 4,
     "ultimos5": {
      "resultados": [
-      "D",
       "V",
       "D",
       "D",
-      "D"
+      "D",
+      "E"
      ],
-     "pontos": 3,
+     "pontos": 4,
      "disputados": 15
     }
    }
@@ -259,10 +259,16 @@
    "aproveitamento": 53.3
   },
   {
-   "rotulo": "Jogos 21 a 29",
-   "pontos": 6,
-   "disputados": 27,
-   "aproveitamento": 22.2
+   "rotulo": "Jogos 21 a 30",
+   "pontos": 7,
+   "disputados": 30,
+   "aproveitamento": 23.3
+  },
+  {
+   "rotulo": "Jogos 31 a 31",
+   "pontos": 3,
+   "disputados": 3,
+   "aproveitamento": 100.0
   }
  ],
  "evolucao": [
@@ -530,61 +536,61 @@
   {
    "rodada": 30,
    "posicao": 13,
-   "pontos": 35,
-   "jogos": 29,
-   "pontos_lider": 61,
-   "pontos_g4": 50,
-   "pontos_z4": 31
+   "pontos": 36,
+   "jogos": 30,
+   "pontos_lider": 64,
+   "pontos_g4": 51,
+   "pontos_z4": 32
   },
   {
    "rodada": 31,
-   "posicao": 13,
-   "pontos": 35,
-   "jogos": 29,
-   "pontos_lider": 64,
+   "posicao": 11,
+   "pontos": 39,
+   "jogos": 31,
+   "pontos_lider": 67,
    "pontos_g4": 51,
-   "pontos_z4": 31
+   "pontos_z4": 32
   }
  ],
  "simulacao": {
   "simulacoes": 20000,
-  "jogos_restantes_liga": 85,
+  "jogos_restantes_liga": 71,
   "prob": {
    "titulo": 0.0,
    "g4": 0.0,
    "libertadores": 0.1,
-   "sul_americana": 38.0,
-   "z4": 7.3
+   "sul_americana": 46.4,
+   "z4": 1.7
   },
   "pontos": {
-   "p25": 45,
-   "mediana": 47,
-   "p75": 50,
-   "min": 35,
-   "max": 62,
-   "mais_provavel": 47
+   "p25": 46,
+   "mediana": 48,
+   "p75": 51,
+   "min": 39,
+   "max": 60,
+   "mais_provavel": 49
   },
-  "posicao_mais_provavel": 12,
+  "posicao_mais_provavel": 11,
   "distribuicao_posicao": [
    0.0,
    0.0,
    0.0,
-   0.03,
-   0.11,
-   0.65,
-   1.81,
-   4.49,
-   8.31,
-   10.65,
-   12.13,
-   13.04,
-   12.46,
-   11.52,
-   9.54,
-   7.99,
-   5.17,
-   1.97,
-   0.13,
+   0.02,
+   0.07,
+   0.38,
+   1.27,
+   4.69,
+   9.37,
+   13.25,
+   17.44,
+   17.04,
+   14.37,
+   9.93,
+   6.83,
+   3.61,
+   1.45,
+   0.29,
+   0.0,
    0.0
   ],
   "numeros_magicos": {
@@ -593,10 +599,10 @@
      "chave": "titulo",
      "rotulo": "Título",
      "posicao": 1,
-     "referencia": 81,
-     "segura": 84,
-     "falta_segura": 49,
-     "vitorias_necessarias": 17,
+     "referencia": 82,
+     "segura": 86,
+     "falta_segura": 47,
+     "vitorias_necessarias": 16,
      "alcancavel": false,
      "prob": 0.0,
      "garantido": false,
@@ -607,9 +613,9 @@
      "rotulo": "G4 · Libertadores direto",
      "posicao": 4,
      "referencia": 64,
-     "segura": 67,
-     "falta_segura": 32,
-     "vitorias_necessarias": 11,
+     "segura": 66,
+     "falta_segura": 27,
+     "vitorias_necessarias": 9,
      "alcancavel": false,
      "prob": 0.0,
      "garantido": false,
@@ -621,8 +627,8 @@
      "posicao": 5,
      "referencia": 62,
      "segura": 64,
-     "falta_segura": 29,
-     "vitorias_necessarias": 10,
+     "falta_segura": 25,
+     "vitorias_necessarias": 9,
      "alcancavel": false,
      "prob": 0.1,
      "garantido": false,
@@ -634,10 +640,10 @@
      "posicao": 11,
      "referencia": 50,
      "segura": 52,
-     "falta_segura": 17,
-     "vitorias_necessarias": 6,
+     "falta_segura": 13,
+     "vitorias_necessarias": 5,
      "alcancavel": true,
-     "prob": 38.2,
+     "prob": 46.5,
      "garantido": false,
      "eliminado": false
     },
@@ -645,22 +651,18 @@
      "chave": "permanencia",
      "rotulo": "Escapar do rebaixamento",
      "posicao": 16,
-     "referencia": 42,
+     "referencia": 41,
      "segura": 44,
-     "falta_segura": 9,
-     "vitorias_necessarias": 3,
+     "falta_segura": 5,
+     "vitorias_necessarias": 2,
      "alcancavel": true,
-     "prob": 92.7,
+     "prob": 98.3,
      "garantido": false,
      "eliminado": false
     }
    ],
    "chances": {
     "pontos": [
-     35,
-     36,
-     37,
-     38,
      39,
      40,
      41,
@@ -682,17 +684,9 @@
      57,
      58,
      59,
-     60,
-     61,
-     62
+     60
     ],
     "titulo": [
-     0.0,
-     0.0,
-     0.0,
-     0.0,
-     0.0,
-     0.0,
      0.0,
      0.0,
      0.0,
@@ -735,16 +729,10 @@
      0.0,
      0.0,
      0.0,
-     0.0,
-     0.0,
-     0.0,
-     0.01,
-     0.07,
-     0.52,
-     2.17,
-     6.57,
-     15.89,
-     30.56
+     0.02,
+     0.29,
+     1.63,
+     6.01
     ],
     "libertadores": [
      0.0,
@@ -763,42 +751,30 @@
      0.0,
      0.0,
      0.0,
-     0.0,
-     0.0,
-     0.0,
      0.01,
-     0.09,
-     0.53,
-     2.17,
-     6.88,
-     16.75,
-     32.19,
-     51.5,
-     70.38
+     0.12,
+     0.9,
+     4.09,
+     12.43,
+     27.97
     ],
     "sul_americana": [
      0.0,
      0.0,
      0.0,
      0.0,
-     0.0,
-     0.0,
-     0.0,
-     0.0,
-     0.0,
-     0.1,
-     0.9,
-     4.62,
-     14.82,
-     33.45,
-     57.2,
-     78.3,
-     91.55,
-     97.59,
-     99.52,
+     0.03,
+     0.2,
+     1.13,
+     5.14,
+     15.89,
+     34.57,
+     57.95,
+     78.7,
+     91.58,
+     97.56,
+     99.56,
      99.94,
-     100.0,
-     100.0,
      100.0,
      100.0,
      100.0,
@@ -807,20 +783,14 @@
      100.0
     ],
     "permanencia": [
-     0.1,
-     0.43,
-     1.61,
-     5.41,
-     13.91,
-     28.45,
-     48.57,
-     69.5,
-     85.83,
-     95.23,
-     98.85,
-     99.83,
-     99.99,
-     100.0,
+     21.76,
+     40.5,
+     61.87,
+     80.42,
+     92.56,
+     98.05,
+     99.66,
+     99.95,
      100.0,
      100.0,
      100.0,
@@ -840,36 +810,6 @@
   }
  },
  "proximos": [
-  {
-   "rodada": 30,
-   "data": "2026-10-12T19:00:00+00:00",
-   "status": "TIMED",
-   "mando": "fora",
-   "adversario": "Coritiba",
-   "adversario_escudo": "https://crests.football-data.org/4241.png",
-   "gp": null,
-   "gc": null,
-   "gp_int": null,
-   "gc_int": null,
-   "resultado": null,
-   "pontos": null,
-   "acumulado": null
-  },
-  {
-   "rodada": 31,
-   "data": "2026-10-17T21:00:00+00:00",
-   "status": "TIMED",
-   "mando": "casa",
-   "adversario": "Chapecoense",
-   "adversario_escudo": "https://crests.football-data.org/1772_large.png",
-   "gp": null,
-   "gc": null,
-   "gp_int": null,
-   "gc_int": null,
-   "resultado": null,
-   "pontos": null,
-   "acumulado": null
-  },
   {
    "rodada": 32,
    "data": "2026-10-24T19:30:00+00:00",
@@ -1415,32 +1355,32 @@
   {
    "rodada": 30,
    "data": "2026-10-12T19:00:00+00:00",
-   "status": "TIMED",
+   "status": "FINISHED",
    "mando": "fora",
    "adversario": "Coritiba",
    "adversario_escudo": "https://crests.football-data.org/4241.png",
-   "gp": null,
-   "gc": null,
-   "gp_int": null,
-   "gc_int": null,
-   "resultado": null,
-   "pontos": null,
-   "acumulado": null
+   "gp": 1,
+   "gc": 1,
+   "gp_int": 1,
+   "gc_int": 1,
+   "resultado": "E",
+   "pontos": 1,
+   "acumulado": 36
   },
   {
    "rodada": 31,
    "data": "2026-10-17T21:00:00+00:00",
-   "status": "TIMED",
+   "status": "FINISHED",
    "mando": "casa",
    "adversario": "Chapecoense",
    "adversario_escudo": "https://crests.football-data.org/1772_large.png",
-   "gp": null,
-   "gc": null,
-   "gp_int": null,
-   "gc_int": null,
-   "resultado": null,
-   "pontos": null,
-   "acumulado": null
+   "gp": 1,
+   "gc": 0,
+   "gp_int": 1,
+   "gc_int": 0,
+   "resultado": "V",
+   "pontos": 3,
+   "acumulado": 39
   },
   {
    "rodada": 32,
